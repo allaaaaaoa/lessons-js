@@ -1,17 +1,30 @@
-const title = "Курс js";
-const screens = "Простые, Сложные, Интерактивные";
-const screenPrice = "30000";
-const rollback = Math.ceil(Math.random()*100);
-const fullPrice = "50000";
-const adaptive = true || false;
 
-console.log(title);
+let title = prompt('Как называется ваш проект?');
+let screens = prompt('Какие типы экранов нужно разработать?');
+let screenPrice = +prompt('Сколько будет стоить данная работа?');
+
+let adaptive = confirm('Нужен ли адаптив на сайте?');
+let rollback = 4765;
+
+let service1 = prompt('Какой дополнительный тип услуги нужен?');
+let service2 = prompt('Какой дополнительный тип услуги нужен?');
+
+let servicePrice1 = +prompt('Сколько это будет стоить?');
+let servicePrice2 = +prompt('Сколько это будет стоить?');
+
+let fullPrice = (screenPrice + servicePrice1 + servicePrice2);
 console.log(fullPrice);
-console.log(adaptive);
 
-console.log(screens.length);
-console.log("Стоимость верстки экранов", screenPrice, "рублей/ долларов/гривен/юани");
-console.log("Стоимость разработки сайта", fullPrice, "рублей/ долларов/гривен/юани");
-console.log(fullPrice * (rollback/100));
+let servicePercentPrice = fullPrice-rollback;
+console.log(servicePercentPrice);
 
-alert ("bzzzzzzzzzz");
+if (fullPrice >= 30000) {
+    console.log ('Даем скидку в 10%');
+} else if (fullPrice >= 15000 && fullPrice <= 30000 ) {
+    console.log  ('Даем скидку в 5%');
+} else if (fullPrice <= 15000 && fullPrice >= 0 ) {
+    console.log  ('Скидка не предусмотрена');
+} else {
+    console.log ('Что то пошло не так');
+}
+
